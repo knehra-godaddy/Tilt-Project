@@ -5,10 +5,12 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    image: tilt-project_backend
     volumes:
-      - ./backend:/app
       - ./utils:/app/utils
       - ./setup:/app/setup
     ports:
       - "3000:3000"
-    command: npm start
+    # incpect dir and all
+    # command: ls -R /app/utils
+    command: ["sh", "-c", "chmod +x /app/setup/setup.sh && /app/setup/setup.sh && npm start"]

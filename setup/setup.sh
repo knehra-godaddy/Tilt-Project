@@ -1,3 +1,5 @@
+#!/bin/sh
+
 function build_node_utils() {
     echo "doing sylinks"
     symlink_to_backend
