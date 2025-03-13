@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilt Demo Project</title>
+</head>
+<body>
+    <h1>Hello World from Frontend!</h1>
+    <div id="message">Loading message from backend...</div>
+
+    <script>
+        fetch('http://localhost:3000/api/message')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').textContent = data.message;
+            })
+            .catch(error => {
+                document.getElementById('message').textContent = 'Error connecting to backend';
+            });
+    </script>
+</body>
+</html>
