@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
+const {helloWorld} = require('poynt');
+
 const app = express();
 const port = 3000;
-const {helloWorld} = require('poynt');
 
 app.use(cors());
 
