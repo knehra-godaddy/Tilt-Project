@@ -7,8 +7,8 @@ const port = 3000;
 
 app.use(cors());
 
-app.get('/api/message', (req, res) => {
-  res.json({ message: helloWorld()});
+app.get('/ping', (req, res) => {
+  res.send({ message: helloWorld()});
 });
 
 app.listen(port, () => {
