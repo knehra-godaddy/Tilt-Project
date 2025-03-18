@@ -1,7 +1,7 @@
 FROM node:14-alpine
 WORKDIR /app/backend
-COPY package.json .
+COPY backend/package.json backend/package-lock.json 
 RUN npm install
-COPY server.js .
+COPY backend .
 EXPOSE 3000
-CMD ["node", "backend/server.js"]
+CMD ["node", "server.js"]

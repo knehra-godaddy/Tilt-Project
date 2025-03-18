@@ -9,8 +9,9 @@ services:
     volumes:
       - ./utils:/app/utils
       - ./setup:/app/setup
+      - ./backend:/app/backend
     ports:
       - "3000:3000"
-    # incpect dir and all
-    # command: ls -R /app/utils
+    # inspect dir and all
+    # command: ls /app
     command: ["sh", "-c", "chmod +x /app/setup/setup.sh && /app/setup/setup.sh && npm start"]

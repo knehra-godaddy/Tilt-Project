@@ -17,7 +17,7 @@ function symlink_to_backend() {
   echo "symlink utils to backend"
   cd ../backend/node_modules || exit 1
   echo "$(pwd)"
-  ln -sfn ../../utils poynt
+  ln -sfn /app/utils poynt
 }
 
 build_backend
