@@ -1,4 +1,4 @@
-version: '3.8'
+
 
 services:
   backend:
@@ -15,3 +15,15 @@ services:
     # inspect dir and all
     # command: ls /app
     command: ["sh", "-c", "chmod +x /app/setup/setup.sh && /app/setup/setup.sh && npm start"]
+  
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: tilt-project_frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

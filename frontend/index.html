@@ -6,11 +6,10 @@
     <title>Tilt Demo Project</title>
 </head>
 <body>
-    <h1>Hello World from Frontend!</h1>
     <div id="message">Loading message from backend...</div>
 
     <script>
-        fetch('http://localhost:3000/api/message')
+        fetch('http://localhost:3000/ping')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('message').textContent = data.message;
