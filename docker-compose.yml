@@ -17,10 +17,11 @@ services:
     command: ["sh", "-c", "chmod +x /app/setup/setup.sh && /app/setup/setup.sh && npm start"]
   
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    image: tilt-project_frontend
+    # no need of this 'build' part as we are not creating our own customised image for front end 
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile
+    image: nginx:alpine
     volumes:
       - ./frontend:/usr/share/nginx/html
     ports:

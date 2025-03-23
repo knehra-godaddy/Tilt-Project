@@ -14,12 +14,14 @@ docker_build(
   ]
 )
 
-docker_build(
-    'tilt-project_frontend',
-    '../frontend',
-    dockerfile='../frontend/Dockerfile',
-    live_update=[
-        sync('../frontend', '/usr/share/nginx/html'),
-        restart_container()
-    ]
-)
+# No need of this part anymore because we are not creating an image for frontend folder as we not using its docker file 
+
+# docker_build(
+#     'tilt-project_frontend',
+#     '.',
+#     dockerfile='-',
+#     live_update=[
+#         sync('../frontend', '/usr/share/nginx/html'),
+#         restart_container()
+#     ]
+# )
